@@ -3,190 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palkkahurmaajat</title>
+    <title>Palkkahurmaajat | Bilebändi</title>
     <style>
-        /* --- YLEISET TYYLIT --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --hot-pink: #ff0080; /* Logosta poimittu pinkki sävy */
+            --dark-bg: #121212;
+            --text-gray: #e0e0e0;
         }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Tumma, rock-henkinen tausta */
-            color: #ffffff;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-        a {
-            color: #ff4757; /* Korostusväri linkeille */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #ff6b81;
-        }
-
-        /* --- NAVIGOINTI & KIELIVALINTA --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(18, 18, 18, 0.9);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #2f3542;
-        }
-        .logo-placeholder {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .lang-switch a {
-            margin-left: 15px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            background: #2f3542;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        /* --- OSIOT --- */
-        section {
-            padding: 100px 20px 60px 20px;
-            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif, Arial;
+            background-color: var(--dark-bg);
+            color: white;
+            margin: 0;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .hero {
-            border-bottom: 1px solid #2f3542;
-        }
-        h1, h2 {
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2rem; color: #ff4757; }
-        
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: #ced6e0;
+            min-height: 100vh;
         }
 
-        /* --- SOME (Instagram & Sähköposti) --- */
-        .social-links {
-            margin-top: 20px;
+        /* Navigointi */
+        nav {
+            padding: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
         }
-        .btn {
-            display: inline-block;
-            background: #ff4757;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 5px;
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--hot-pink);
+            color: var(--hot-pink);
+            padding: 5px 12px;
+            cursor: pointer;
+            border-radius: 20px;
             font-weight: bold;
-            margin: 10px;
-            transition: transform 0.2s, background 0.2s;
-        }
-        .btn:hover {
-            background: #ff6b81;
-            color: #fff;
-            transform: translateY(-2px);
-        }
-        .btn.ig {
-            background: #e1306c; /* Instagramin väri */
-        }
-        .btn.ig:hover {
-            background: #fd1d1d;
+            transition: 0.3s;
         }
 
-        /* --- TULEVAT SISÄLLÖT (Varaukset tulevalle) --- */
-        .future-content {
-            margin-top: 40px;
-            padding: 20px;
-            border: 2px dashed #2f3542;
-            border-radius: 8px;
-            color: #747d8c;
-            font-style: italic;
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--hot-pink);
+            color: white;
+        }
+
+        /* Sisältö */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .logo {
+            max-width: 300px;
             width: 100%;
+            height: auto;
+            margin-bottom: 30px;
         }
 
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
-            color: #747d8c;
-            border-top: 1px solid #2f3542;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--hot-pink);
         }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: var(--text-gray);
+        }
+
+        /* Yhteystiedot */
+        .contact-box {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 4px solid var(--hot-pink);
+        }
+
+        .email-display {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 15px 0;
+            color: white;
+            word-break: break-all;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--hot-pink);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .social-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Piilotuslogiikka kielelle */
+        [lang="en"] { display: none; }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGOINTI -->
     <nav>
-        <div class="logo-placeholder">BÄNDIN NIMI</div>
-        <div class="lang-switch">
-            <a href="#suomi">FI</a>
-            <a href="#english">EN</a>
-        </div>
+        <button class="lang-btn active" onclick="setLang('fi')">FI</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
     </nav>
 
-    <!-- SUOMENKIELINEN OSIO -->
-    <section id="suomi" class="hero">
-        <!-- Tähän voit myöhemmin vaihtaa logon kuva-elementiksi: <img src="logo.png" alt="Logo"> -->
-        <h1>BÄNDIN NIMI</h1>
-        
-        <p>
-            Tähän tulee bändinne kuvaus suomeksi. Voit kertoa tässä lyhyesti miltä musa kuulostaa, 
-            mistä tulette ja mikä on homman nimi. Tyylikäs ja ytimekäs teksti toimii parhaiten.
-        </p>
+    <div class="container">
+        <!-- Logo -->
+        <img src="logo.png" alt="Palkkahurmaajat logo" class="logo">
 
-        <div class="social-links">
-            <a href="https://instagram.com/teidan_ig_tunnus" target="_blank" class="btn ig">Instagram</a>
-            <a href="mailto:teidan.sahkoposti@domain.com" class="btn">Ota yhteyttä sähköpostitse</a>
+        <!-- SUOMENKIELINEN SISÄLTÖ -->
+        <div id="content-fi" lang="fi">
+            <h1>Palkkahurmaajat</h1>
+            <p class="description">
+                Palkkahurmaajat vievät jalat alta tanssittavilla pop- ja rock-covereillaan, jotka yleisö varmasti tuntee - kasarilta, ysäriltä, vuosituhannen vaihteesta ja ehkäpä seuraavana aamuna myös jalkapohjissaan.
+            </p>
+            <div class="contact-box">
+                <h3>Tilaa meidät juhliin:</h3>
+                <span class="email-display">palkkahurmaajat@esimerkki.fi</span>
+                <a href="https://instagram.com/palkkahurmaajat" class="social-link" target="_blank">Seuraa meitä Instagramissa →</a>
+            </div>
         </div>
 
-        <!-- Paikkavaraus tulevalle materiaalille -->
-        <div class="future-content">
-            Uutta musiikkia ja kuvia tulossa pian!
+        <!-- ENGLANNINKIELINEN SISÄLTÖ -->
+        <div id="content-en" lang="en">
+            <h1>Palkkahurmaajat</h1>
+            <p class="description">
+                Palkkahurmaajat (The Salary Charmers) will sweep you off your feet with danceable pop and rock covers that the audience is sure to recognize - from the 80s, 90s, the turn of the millennium, and perhaps the next morning, also felt in the soles of their feet.
+            </p>
+            <div class="contact-box">
+                <h3>Book us for your event:</h3>
+                <span class="email-display">palkkahurmaajat@esimerkki.fi</span>
+                <a href="https://instagram.com/palkkahurmaajat" class="social-link" target="_blank">Follow us on Instagram →</a>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ENGLANNINKIELINEN OSIO -->
-    <section id="english">
-        <h1>BAND NAME</h1>
-        
-        <p>
-            This is where your band description goes in English. Introduce your sound, 
-            your origins, and what you are all about for the international audience.
-        </p>
+    <script>
+        function setLang(lang) {
+            // Piilota molemmat
+            document.getElementById('content-fi').style.display = 'none';
+            document.getElementById('content-en').style.display = 'none';
+            
+            // Näytä valittu
+            document.getElementById('content-' + lang).style.display = 'block';
 
-        <div class="social-links">
-            <a href="https://instagram.com/teidan_ig_tunnus" target="_blank" class="btn ig">Instagram</a>
-            <a href="mailto:teidan.sahkoposti@domain.com" class="btn">Contact via Email</a>
-        </div>
-
-        <!-- Placeholder for future media -->
-        <div class="future-content">
-            New music and media coming soon!
-        </div>
-    </section>
-
-    <!-- ALATUNNISTE -->
-    <footer>
-        <p>&copy; 2026 Bändin Nimi. Kaikki oikeudet pidätetään.</p>
-    </footer>
+            // Päivitä nappien ulkoasu
+            const btns = document.querySelectorAll('.lang-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
