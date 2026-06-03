@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palkkahurmaajat</title>
+    <style>
+        /* --- YLEISET TYYLIT --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Tumma, rock-henkinen tausta */
+            color: #ffffff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        a {
+            color: #ff4757; /* Korostusväri linkeille */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff6b81;
+        }
+
+        /* --- NAVIGOINTI & KIELIVALINTA --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(18, 18, 18, 0.9);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #2f3542;
+        }
+        .logo-placeholder {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .lang-switch a {
+            margin-left: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            background: #2f3542;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* --- OSIOT --- */
+        section {
+            padding: 100px 20px 60px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero {
+            border-bottom: 1px solid #2f3542;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2rem; color: #ff4757; }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #ced6e0;
+        }
+
+        /* --- SOME (Instagram & Sähköposti) --- */
+        .social-links {
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff4757;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .btn:hover {
+            background: #ff6b81;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn.ig {
+            background: #e1306c; /* Instagramin väri */
+        }
+        .btn.ig:hover {
+            background: #fd1d1d;
+        }
+
+        /* --- TULEVAT SISÄLLÖT (Varaukset tulevalle) --- */
+        .future-content {
+            margin-top: 40px;
+            padding: 20px;
+            border: 2px dashed #2f3542;
+            border-radius: 8px;
+            color: #747d8c;
+            font-style: italic;
+            width: 100%;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #747d8c;
+            border-top: 1px solid #2f3542;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGOINTI -->
+    <nav>
+        <div class="logo-placeholder">BÄNDIN NIMI</div>
+        <div class="lang-switch">
+            <a href="#suomi">FI</a>
+            <a href="#english">EN</a>
+        </div>
+    </nav>
+
+    <!-- SUOMENKIELINEN OSIO -->
+    <section id="suomi" class="hero">
+        <!-- Tähän voit myöhemmin vaihtaa logon kuva-elementiksi: <img src="logo.png" alt="Logo"> -->
+        <h1>BÄNDIN NIMI</h1>
+        
+        <p>
+            Tähän tulee bändinne kuvaus suomeksi. Voit kertoa tässä lyhyesti miltä musa kuulostaa, 
+            mistä tulette ja mikä on homman nimi. Tyylikäs ja ytimekäs teksti toimii parhaiten.
+        </p>
+
+        <div class="social-links">
+            <a href="https://instagram.com/teidan_ig_tunnus" target="_blank" class="btn ig">Instagram</a>
+            <a href="mailto:teidan.sahkoposti@domain.com" class="btn">Ota yhteyttä sähköpostitse</a>
+        </div>
+
+        <!-- Paikkavaraus tulevalle materiaalille -->
+        <div class="future-content">
+            Uutta musiikkia ja kuvia tulossa pian!
+        </div>
+    </section>
+
+    <!-- ENGLANNINKIELINEN OSIO -->
+    <section id="english">
+        <h1>BAND NAME</h1>
+        
+        <p>
+            This is where your band description goes in English. Introduce your sound, 
+            your origins, and what you are all about for the international audience.
+        </p>
+
+        <div class="social-links">
+            <a href="https://instagram.com/teidan_ig_tunnus" target="_blank" class="btn ig">Instagram</a>
+            <a href="mailto:teidan.sahkoposti@domain.com" class="btn">Contact via Email</a>
+        </div>
+
+        <!-- Placeholder for future media -->
+        <div class="future-content">
+            New music and media coming soon!
+        </div>
+    </section>
+
+    <!-- ALATUNNISTE -->
+    <footer>
+        <p>&copy; 2026 Bändin Nimi. Kaikki oikeudet pidätetään.</p>
+    </footer>
+
+</body>
+</html>
