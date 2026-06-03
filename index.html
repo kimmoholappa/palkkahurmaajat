@@ -103,6 +103,18 @@
             text-decoration: underline;
         }
 
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
         /* Piilotuslogiikka kielelle */
         [lang="en"] { display: none; }
     </style>
@@ -120,7 +132,7 @@
 
         <!-- SUOMENKIELINEN SISÄLTÖ -->
         <div id="content-fi" lang="fi">
-            <h1>Palkkahurmaajat</h1>
+            <h1 class="visually-hidden">Palkkahurmaajat</h1>
             <p class="description">
                 Palkkahurmaajat vievät jalat alta tanssittavilla pop- ja rock-covereillaan, jotka yleisö varmasti tuntee - kasarilta, ysäriltä, vuosituhannen vaihteesta ja ehkäpä seuraavana aamuna myös jalkapohjissaan.
             </p>
@@ -133,7 +145,7 @@
 
         <!-- ENGLANNINKIELINEN SISÄLTÖ -->
         <div id="content-en" lang="en">
-            <h1>Palkkahurmaajat</h1>
+            <h1 class="visually-hidden">Palkkahurmaajat</h1>
             <p class="description">
                 Palkkahurmaajat (The Salary Charmers) will sweep you off your feet with danceable pop and rock covers that the audience is sure to recognize - from the 80s, 90s, the turn of the millennium, and perhaps the next morning, also felt in the soles of their feet.
             </p>
