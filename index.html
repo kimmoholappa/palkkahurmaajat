@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palkkahurmaajat | Bilebändi</title>
+    
+    <!-- Tyylikäs ja moderni Montserrat-fontti -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --hot-pink: #ff0080; /* Logosta poimittu pinkki sävy */
-            --dark-bg: #121212;
-            --text-gray: #e0e0e0;
+            --hot-pink: #ff0080;
+            --dark-bg: #0f0f0f;
+            --text-gray: #f0f0f0;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif, Arial;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--dark-bg);
             color: white;
             margin: 0;
@@ -22,87 +26,97 @@
             min-height: 100vh;
         }
 
-        /* Navigointi */
+        /* Navigointi kielivalinnalla */
         nav {
-            padding: 20px;
+            padding: 30px;
             display: flex;
             justify-content: flex-end;
-            gap: 15px;
+            gap: 10px;
         }
 
         .lang-btn {
-            background: none;
-            border: 1px solid var(--hot-pink);
-            color: var(--hot-pink);
-            padding: 5px 12px;
+            background: transparent;
+            border: 1px solid #444;
+            color: #888;
+            padding: 8px 16px;
             cursor: pointer;
-            border-radius: 20px;
-            font-weight: bold;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .lang-btn:hover, .lang-btn.active {
-            background: var(--hot-pink);
-            color: white;
+        .lang-btn.active {
+            border-color: var(--hot-pink);
+            color: var(--hot-pink);
         }
 
-        /* Sisältö */
+        .lang-btn:hover {
+            color: white;
+            border-color: white;
+        }
+
+        /* Pääsisältö */
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 20px 20px 80px 20px;
         }
 
         .logo {
-            max-width: 300px;
+            max-width: 350px;
             width: 100%;
             height: auto;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--hot-pink);
+            margin-bottom: 40px;
         }
 
         .description {
             font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            font-weight: 400;
             color: var(--text-gray);
         }
 
         /* Yhteystiedot */
         .contact-box {
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 15px;
-            border-top: 4px solid var(--hot-pink);
+            padding-top: 40px;
+            border-top: 1px solid #333;
+        }
+
+        .contact-box h3 {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--hot-pink);
+            margin-bottom: 10px;
         }
 
         .email-display {
             display: block;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin: 15px 0;
-            color: white;
-            word-break: break-all;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            letter-spacing: -0.5px;
         }
 
         .social-link {
             display: inline-block;
-            margin-top: 20px;
-            color: var(--hot-pink);
+            margin-top: 25px;
+            color: #888;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
         }
 
         .social-link:hover {
-            text-decoration: underline;
+            color: var(--hot-pink);
+            border-bottom: 1px solid var(--hot-pink);
         }
 
+        /* Saavutettavuus: Piilotettu otsikko */
         .visually-hidden {
             position: absolute !important;
             width: 1px !important;
@@ -115,43 +129,44 @@
             border: 0 !important;
         }
 
-        /* Piilotuslogiikka kielelle */
+        /* Kielen hallinta */
         [lang="en"] { display: none; }
     </style>
 </head>
 <body>
 
     <nav>
-        <button class="lang-btn active" onclick="setLang('fi')">FI</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn active" id="btn-fi" onclick="setLang('fi')">FI</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
     </nav>
 
     <div class="container">
+        <!-- Bändin nimi hakukoneille -->
+        <h1 class="visually-hidden">Palkkahurmaajat - Bilebändi ja cover-musiikkia juhliin</h1>
+
         <!-- Logo -->
         <img src="palkkahurmaajat-logo-transparent.png" alt="Palkkahurmaajat logo" class="logo">
 
-        <!-- SUOMENKIELINEN SISÄLTÖ -->
+        <!-- SUOMEKSI -->
         <div id="content-fi" lang="fi">
-            <h1 class="visually-hidden">Palkkahurmaajat</h1>
             <p class="description">
                 Palkkahurmaajat vievät jalat alta tanssittavilla pop- ja rock-covereillaan, jotka yleisö varmasti tuntee - kasarilta, ysäriltä, vuosituhannen vaihteesta ja ehkäpä seuraavana aamuna myös jalkapohjissaan.
             </p>
             <div class="contact-box">
-                <h3>Tilaa meidät juhliin:</h3>
-                <span class="email-display">palkkahurmaajat@esimerkki.fi</span>
+                <h3>Tilaa bändi juhliin</h3>
+                <span class="email-display">palkkahurmaajat@gmail.com</span>
                 <a href="https://instagram.com/palkkahurmaajat" class="social-link" target="_blank">Seuraa meitä Instagramissa →</a>
             </div>
         </div>
 
-        <!-- ENGLANNINKIELINEN SISÄLTÖ -->
+        <!-- ENGLISH -->
         <div id="content-en" lang="en">
-            <h1 class="visually-hidden">Palkkahurmaajat</h1>
             <p class="description">
-                Palkkahurmaajat (The Salary Charmers) will sweep you off your feet with danceable pop and rock covers that the audience is sure to recognize - from the 80s, 90s, the turn of the millennium, and perhaps the next morning, also felt in the soles of their feet.
+                Palkkahurmaajat will sweep you off your feet with danceable pop and rock covers that the audience is sure to recognize - from the 80s, 90s, the turn of the millennium, and perhaps the next morning, also felt in the soles of their feet.
             </p>
             <div class="contact-box">
-                <h3>Book us for your event:</h3>
-                <span class="email-display">palkkahurmaajat@esimerkki.fi</span>
+                <h3>Book the band</h3>
+                <span class="email-display">palkkahurmaajat@gmail.com</span>
                 <a href="https://instagram.com/palkkahurmaajat" class="social-link" target="_blank">Follow us on Instagram →</a>
             </div>
         </div>
@@ -159,17 +174,13 @@
 
     <script>
         function setLang(lang) {
-            // Piilota molemmat
-            document.getElementById('content-fi').style.display = 'none';
-            document.getElementById('content-en').style.display = 'none';
+            // Vaihda näkyvyys
+            document.getElementById('content-fi').style.display = (lang === 'fi') ? 'block' : 'none';
+            document.getElementById('content-en').style.display = (lang === 'en') ? 'block' : 'none';
             
-            // Näytä valittu
-            document.getElementById('content-' + lang).style.display = 'block';
-
-            // Päivitä nappien ulkoasu
-            const btns = document.querySelectorAll('.lang-btn');
-            btns.forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            // Päivitä nappien tyylit
+            document.getElementById('btn-fi').classList.toggle('active', lang === 'fi');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         }
     </script>
 
