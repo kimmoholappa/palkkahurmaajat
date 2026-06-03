@@ -47,12 +47,14 @@
             transition: 0.3s;
         }
 
+        /* TÄSSÄ: Aktiivinen kielipainike täytetään värillä */
         .lang-btn.active {
+            background-color: var(--hot-pink);
             border-color: var(--hot-pink);
-            color: var(--hot-pink);
+            color: white;
         }
 
-        .lang-btn:hover {
+        .lang-btn:hover:not(.active) {
             color: white;
             border-color: white;
         }
@@ -90,7 +92,8 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             color: var(--hot-pink);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .email-display {
@@ -153,7 +156,8 @@
                 Palkkahurmaajat vievät jalat alta tanssittavilla pop- ja rock-covereillaan, jotka yleisö varmasti tuntee - kasarilta, ysäriltä, vuosituhannen vaihteesta ja ehkäpä seuraavana aamuna myös jalkapohjissaan.
             </p>
             <div class="contact-box">
-                <h3>Tilaa bändi juhliin</h3>
+                <!-- TÄSSÄ: Päivitetty otsikko -->
+                <h3>Tilaa meidät juhliin</h3>
                 <span class="email-display">palkkahurmaajat@gmail.com</span>
                 <a href="https://instagram.com/palkkahurmaajat" class="social-link" target="_blank">Seuraa meitä Instagramissa →</a>
             </div>
@@ -165,7 +169,8 @@
                 Palkkahurmaajat will sweep you off your feet with danceable pop and rock covers that the audience is sure to recognize - from the 80s, 90s, the turn of the millennium, and perhaps the next morning, also felt in the soles of their feet.
             </p>
             <div class="contact-box">
-                <h3>Book the band</h3>
+                <!-- TÄSSÄ: Päivitetty englanninkielinen otsikko -->
+                <h3>Book us for your event</h3>
                 <span class="email-display">palkkahurmaajat@gmail.com</span>
                 <a href="https://instagram.com/palkkahurmaajat" class="social-link" target="_blank">Follow us on Instagram →</a>
             </div>
